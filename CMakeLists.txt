@@ -44,7 +44,7 @@ endif()
 
 
 if (BUILD_HEADER_ONLY)
-    if(MSVC)
+	if(MSVC)
         message(FATAL_ERROR "BUILD_HEADER_ONLY is not supported for Windows")
     endif()
     add_custom_command(
@@ -54,7 +54,7 @@ if (BUILD_HEADER_ONLY)
             COMMAND /bin/sh make.sh
     )
 endif ()
-# TODO fix for msvc
+
 if (BUILD_EXAMPLE)
     add_executable(bench_example example/simple_benchmark.cpp)
     target_link_libraries(bench_example rbenchmark)
